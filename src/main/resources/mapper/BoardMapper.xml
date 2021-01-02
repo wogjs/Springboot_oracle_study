@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.project.study.domain.BoardRepository">
+    <select id="board" resultType="com.project.study.web.board.DTO.BoardDto">
+        SELECT *
+        FROM BOARD.BOARDS
+    </select>
+
+    <insert id="write" parameterType="com.project.study.web.board.DTO.BoardWriteDto">
+        INSERT
+        INTO BOARD.BOARDS (BOAUID, USERID, TITLE, CONTENT, CREATEDATE)
+        VALUES (BOARD_seq.NEXTVAL, #{USERID}, #{TITLE}, #{CONTENT}, #{CREATEDATE})
+    </insert>
+</mapper>

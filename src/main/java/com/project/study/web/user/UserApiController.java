@@ -2,6 +2,7 @@ package com.project.study.web.user;
 
 import com.project.study.config.ApiResponse;
 import com.project.study.service.UserService;
+import com.project.study.session.UserInfo;
 import com.project.study.web.user.DTO.SigninDto;
 import com.project.study.web.user.DTO.SignupDto;
 import com.project.study.web.user.DTO.UserDto;
@@ -24,6 +25,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 public class UserApiController {
     private final UserService userService;
+    private final UserInfo userInfo;
     
     @ApiOperation(value = "회원가입")
     @PostMapping("/signup")
@@ -32,6 +34,7 @@ public class UserApiController {
 
         try {
             result = new ApiResponse(true, "성공", userService.signup(requestDto));
+            userInfo.setUserID(requestDto.getID());
             return ResponseEntity.ok().body(result);
         } catch (Exception e) {
             e.printStackTrace();

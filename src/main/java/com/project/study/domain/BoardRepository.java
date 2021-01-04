@@ -13,4 +13,6 @@ public interface BoardRepository {
     List<BoardDto> board();
 
     Long write(BoardWriteDto writeDto);
+
+    Long test();
 }

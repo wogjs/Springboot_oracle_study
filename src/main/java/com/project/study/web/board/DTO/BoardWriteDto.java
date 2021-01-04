@@ -12,6 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BoardWriteDto {
+    private Long BOAUID;
     private String USERID;
     private String TITLE;
     private String CONTENT;

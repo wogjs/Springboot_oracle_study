@@ -12,6 +12,10 @@
     <insert id="write" parameterType="com.project.study.web.board.DTO.BoardWriteDto">
         INSERT
         INTO BOARD.BOARDS (BOAUID, USERID, TITLE, CONTENT, CREATEDATE)
-        VALUES (BOARD_seq.NEXTVAL, #{USERID}, #{TITLE}, #{CONTENT}, #{CREATEDATE})
+        VALUES (#{BOAUID}, #{USERID}, #{TITLE}, #{CONTENT}, #{CREATEDATE})
     </insert>
+
+    <select id="test" resultType="Long">
+        SELECT BOAUID+1 FROM BOARD.BOARDS WHERE rownum <=1 ORDER BY BOAUID DESC
+    </select>
 </mapper>

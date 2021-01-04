@@ -40,4 +40,11 @@ public class BoardApiController {
         }
     }
 
+    @ApiOperation(value = "test")
+    @PostMapping("/test")
+    public Long testCode() {
+        return boardService.test();
+    }
+    
+
 }

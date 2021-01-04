@@ -22,4 +22,8 @@ public class BoardService {
     public Long write(BoardWriteDto writeDto) {
         return boardRepository.write(writeDto);
     }
+
+    public Long test() {
+        return boardRepository.test();
+    }
 }

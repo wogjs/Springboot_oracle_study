@@ -1,7 +1,5 @@
 package com.project.study.web.user.DTO;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -17,5 +15,5 @@ public class SignupDto {
     private String NAME;
     private String EMAIL;
     private String PHONE;
-    private LocalDateTime CREATEDATE;
+    private String CREATEDATE;
 }

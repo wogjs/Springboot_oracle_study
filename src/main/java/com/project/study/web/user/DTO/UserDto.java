@@ -1,7 +1,5 @@
 package com.project.study.web.user.DTO;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +16,6 @@ public class UserDto {
     private String EMAIL;
     private String PHONE;
     private String AUTHS;
-    private LocalDateTime CREATEDATE;
-    private LocalDateTime UPDATEDATE;
+    private String CREATEDATE;
+    private String UPDATEDATE;
 }

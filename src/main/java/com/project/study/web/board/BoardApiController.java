@@ -39,12 +39,4 @@ public class BoardApiController {
             return ResponseEntity.badRequest().body(result);
         }
     }
-
-    @ApiOperation(value = "test")
-    @PostMapping("/test")
-    public Long testCode() {
-        return boardService.test();
-    }
-    
-
 }

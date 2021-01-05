@@ -10,12 +10,14 @@
     </select>
 
     <insert id="write" parameterType="com.project.study.web.board.DTO.BoardWriteDto">
+        <selectKey resultType="Long" keyProperty="BOAUID" order="BEFORE">
+            SELECT BOAUID+1 
+            FROM BOARD.BOARDS 
+            WHERE rownum  <![CDATA[ <= ]]> 1 
+            ORDER BY BOAUID DESC
+        </selectKey>
         INSERT
         INTO BOARD.BOARDS (BOAUID, USERID, TITLE, CONTENT, CREATEDATE)
         VALUES (#{BOAUID}, #{USERID}, #{TITLE}, #{CONTENT}, #{CREATEDATE})
     </insert>
-
-    <select id="test" resultType="Long">
-        SELECT BOAUID+1 FROM BOARD.BOARDS WHERE rownum <=1 ORDER BY BOAUID DESC
-    </select>
 </mapper>

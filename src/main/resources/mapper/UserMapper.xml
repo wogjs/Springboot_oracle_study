@@ -6,13 +6,13 @@
 <mapper namespace="com.project.study.domain.UserRepository">
     <insert id="signup" parameterType="com.project.study.web.user.DTO.SignupDto">
         INSERT
-        INTO BOARD.USERS (ID, PW, NAME, EMAIL, PHONE, CREATEDATE)
+        INTO WOGJS.USERS (ID, PW, NAME, EMAIL, PHONE, CREATEDATE)
         VALUES (#{ID}, #{PW}, #{NAME}, #{EMAIL}, #{PHONE}, #{CREATEDATE})
     </insert>
 
     <select id="signin" parameterType="com.project.study.web.user.DTO.SigninDto" resultType="com.project.study.web.user.DTO.UserDto">
         SELECT *
-        FROM BOARD.USERS u
+        FROM WOGJS.USERS u
         WHERE u.ID = #{ID} AND u.PW = #{PW}
     </select>
 </mapper>

@@ -15,4 +15,10 @@
         FROM WOGJS.USERS u
         WHERE u.ID = #{ID} AND u.PW = #{PW}
     </select>
+
+    <update id="update" parameterType="com.project.study.web.user.DTO.UserUpdateDto">
+        UPDATE WOGJS.USERS
+        SET PW=#{PW}, EMAIL=#{EMAIL}, PHONE=#{PHONE}, UPDATEDATE=#{UPDATEDATE}
+        WHERE ID=#{ID}
+    </update>
 </mapper>

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.view.RedirectView;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -66,8 +67,8 @@ public class UserApiController {
     }
 
     @ApiOperation(value = "정보수정")
-    @PutMapping("/{id}")
-    public ResponseEntity<?> userUpdate(@RequestBody UserUpdateDto updateDto) {
+    @PutMapping("/{id}/update")
+    public ResponseEntity<?> userUpdate(@PathVariable String id,@RequestBody UserUpdateDto updateDto) {
         ApiResponse result = null;
 
         try {
@@ -79,5 +80,13 @@ public class UserApiController {
             result = new ApiResponse(false, e.getMessage(), null);
             return ResponseEntity.badRequest().body(result);
         }
+    }
+
+    @ApiOperation(value = "로그아웃")
+    @PostMapping("/logout")
+    public RedirectView logout() {
+        userInfo.setUserID(null);
+        userInfo.setAUTHS(null);
+        return new RedirectView("/");
     }
 }

@@ -9,9 +9,26 @@
         FROM WOGJS.BOARDS
     </select>
 
+    <select id="boardTest" resultType="com.project.study.web.board.DTO.BoardDto">
+        SELECT *
+        FROM WOGJS.BOARDS b
+        WHERE b.USERID = 'TEST'
+    </select>
+
     <insert id="write" parameterType="com.project.study.web.board.DTO.BoardWriteDto">
         INSERT
         INTO WOGJS.BOARDS (BOAUID, USERID, TITLE, CONTENT, CREATEDATE)
         VALUES (UID_SEQ.NEXTVAL, #{USERID}, #{TITLE}, #{CONTENT}, #{CREATEDATE})
     </insert>
+
+    <update id="update" parameterType="com.project.study.web.board.DTO.BoardUpdateDto">
+        UPDATE WOGJS.BOARDS
+        SET TITLE=#{TITLE}, CONTENT=#{CONTENT}, UPDATEDATE=#{UPDATEDATE}
+        WHERE BOAUID=#{BOAUID}
+    </update>
+
+    <delete id="delete" parameterType="Long">
+        DELETE FROM WOGJS.BOARDS
+        WHERE BOAUID=#{uid}
+    </delete>
 </mapper>

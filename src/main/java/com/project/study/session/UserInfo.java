@@ -19,4 +19,5 @@ import lombok.ToString;
 @SuppressWarnings("serial")
 public class UserInfo implements Serializable{
     private String userID;
+    private String AUTHS;
 }

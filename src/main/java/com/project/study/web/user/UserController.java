@@ -1,8 +1,13 @@
 package com.project.study.web.user;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import com.project.study.service.UserService;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -10,4 +15,11 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class UserController {
     
+    private final UserService userService;
+
+    @ApiOperation(value = "로그인 화면")
+    @GetMapping("/users/login")
+    public String login (Model model) {
+        return "user/signup";
+    }
 }

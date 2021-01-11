@@ -1,0 +1,16 @@
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org">
+
+    <div th:fragment="navFragment">
+        <nav class="d-flex flex-row justify-content-between navbar navbar-dark bg-dark">
+            <h2 onclick="location.href='/'">게시판</h2>
+            <div class="w-90">
+                <input type="text">
+                <button>검색</button>
+            </div>
+            <div>
+                <button class="btn btn-success" onclick="location.href='/users/login'">로그인</button>
+            </div>
+        </nav>
+    </div>
+    
+</html>

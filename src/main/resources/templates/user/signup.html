@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lagn="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <style>
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        .h-div {
+            height: 80%;
+        }
+    </style>
+
+    <th:block th:replace="fragments/config :: configFragment" ></th:block>
+
+</head>
+<body>
+    <th:block th:replace="fragments/nav :: navFragment"></th:block>
+    <div class="container h-div d-flex align-items-center justify-content-center">
+        <form action="/user/login" method="POST">
+            <div class="">
+                아이디
+            </div>
+            <div class="">
+                비번
+            </div>
+            <div class="">
+                로그인
+            </div>
+        </form>
+    </div>
+    <th:block th:replace="fragments/footer :: footerFragment"></th:block>
+</body>
+</html>

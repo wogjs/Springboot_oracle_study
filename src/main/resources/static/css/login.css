@@ -1,0 +1,14 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+.h-div {
+    height: 80%;
+}
+.login-form{
+    width: 30%;
+}
+#idinquiry, #pwinquiry, #signup {
+    color : #373737;
+    text-decoration: none;
+}

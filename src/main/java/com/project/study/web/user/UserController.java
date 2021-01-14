@@ -20,6 +20,12 @@ public class UserController {
     @ApiOperation(value = "로그인 화면")
     @GetMapping("/users/login")
     public String login (Model model) {
+        return "user/login";
+    }
+
+    @ApiOperation(value = "회원가입 화면")
+    @GetMapping("/users/signup")
+    public String signup (Model model) {
         return "user/signup";
     }
 }
